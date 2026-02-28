@@ -8,1747 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary-blue: #0984e3;
-            --dark-blue: #0652a8;
-            --darker-blue: #033d73;
-            --light-blue: #3498db;
-            --white: #ffffff;
-            --off-white: #f8f9fa;
-            --light-gray: #e9ecef;
-            --dark-gray: #2d3436;
-            --text-gray: #636e72;
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--dark-blue) 0%, var(--darker-blue) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
-            --glow-blue: 0 0 30px rgba(9, 132, 227, 0.5);
-            --glow-blue-strong: 0 0 60px rgba(9, 132, 227, 0.7);
-        }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: var(--off-white);
-            color: var(--dark-gray);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark-gray);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-blue);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--light-blue);
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .navbar.scrolled {
-            background: rgba(3, 61, 115, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--glow-blue);
-            transform: rotate(-5deg);
-            transition: transform 0.3s ease;
-        }
-
-        .logo-icon:hover {
-            transform: rotate(0deg) scale(1.1);
-        }
-
-        .logo-icon i {
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .logo-text span {
-            color: var(--primary-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-blue);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            padding: 0.75rem 1.5rem;
-            background: var(--gradient-primary);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: var(--glow-blue);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--glow-blue-strong);
-        }
-
-        /* Mobile Menu */
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .mobile-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--white);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: var(--gradient-dark);
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(9, 132, 227, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 60% 80%, rgba(6, 82, 168, 0.15) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        /* Animated Grid Background */
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                linear-gradient(rgba(9, 132, 227, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(9, 132, 227, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(50px, 50px);
-            }
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            bottom: 20%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            top: 50%;
-            right: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-30px) rotate(10deg);
-            }
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-text {
-            color: var(--white);
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(9, 132, 227, 0.2);
-            border: 1px solid var(--primary-blue);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        .hero-badge i {
-            color: var(--primary-blue);
-        }
-
-        .hero-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            animation: slideInLeft 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero-title .highlight {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .hero-title .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInLeft 0.8s ease-out 0.4s backwards;
-        }
-
-        .hero-tagline {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            animation: slideInLeft 0.8s ease-out 0.6s backwards;
-        }
-
-        .hero-tagline i {
-            font-size: 1.25rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: slideInLeft 0.8s ease-out 0.8s backwards;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: var(--gradient-primary);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: var(--glow-blue);
-            border: 1px solid #fff;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--glow-blue-strong);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: transparent;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        /* Hero Image Section */
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInRight 1s ease-out 0.5s backwards;
-        }
-
-        .hero-card {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 3/4;
-            background: linear-gradient(145deg, rgba(9, 132, 227, 0.2), rgba(6, 82, 168, 0.3));
-            border-radius: 20px;
-            border: 1px solid rgba(9, 132, 227, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            margin-top: 110px;
-        }
-
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, var(--primary-blue), transparent);
-            animation: rotate 4s linear infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .hero-card-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero-card-logo {
-            width: 150px;
-            height: 150px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            box-shadow: var(--glow-blue-strong);
-            font-size: 4rem;
-        }
-
-        .hero-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-card p {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            opacity: 0.7;
-        }
-
-        /* Decorative Fox */
-        .fox-decoration {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            font-size: 15rem;
-            opacity: 0.1;
-            color: var(--primary-blue);
-            z-index: 1;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 5%;
-            background: var(--white);
-            position: relative;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to bottom, var(--gradient-dark), transparent);
-            pointer-events: none;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(9, 132, 227, 0.1);
-            border: 1px solid var(--primary-blue);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .founder-card {
-            position: relative;
-        }
-
-        .founder-image-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(9, 132, 227, 0.2);
-        }
-
-        .founder-image {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 8rem;
-        }
-
-        .founder-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(3, 61, 115, 0.95), transparent);
-            color: var(--white);
-        }
-
-        .founder-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .founder-role {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about-text h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--off-white);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .highlight-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(9, 132, 227, 0.15);
-        }
-
-        .highlight-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .highlight-icon i {
-            color: var(--white);
-            font-size: 1.25rem;
-        }
-
-        .highlight-text h4 {
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 0.25rem;
-        }
-
-        .highlight-text p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin: 0;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 6rem 5%;
-            background: var(--gradient-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 30% 50%, rgba(9, 132, 227, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(52, 152, 219, 0.15) 0%, transparent 50%);
-        }
-
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(9, 132, 227, 0.2);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            background: rgba(9, 132, 227, 0.1);
-            border-color: var(--primary-blue);
-        }
-
-        .stat-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            box-shadow: var(--glow-blue);
-        }
-
-        .stat-icon i {
-            color: var(--white);
-            font-size: 1.75rem;
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 8rem 5%;
-            background: var(--off-white);
-        }
-
-        .gallery-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(3, 61, 115, 0.8), transparent);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-item:hover .gallery-icon {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .gallery-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
-            opacity: 0.5;
-        }
-
-        .gallery-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.5);
-            width: 60px;
-            height: 60px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 20;
-        }
-
-        .gallery-icon i {
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-        }
-
-        .gallery-item:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .gallery-item:nth-child(4) {
-            grid-column: span 2;
-        }
-
-        /* Timeline Section */
-        .timeline {
-            padding: 8rem 5%;
-            background: var(--white);
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to bottom, var(--gradient-dark), transparent);
-            pointer-events: none;
-        }
-
-        .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: calc(50% + 40px);
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-item:nth-child(even) {
-            justify-content: flex-start;
-            padding-right: 0;
-            padding-left: calc(50% + 40px);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            box-shadow: var(--glow-blue);
-            z-index: 10;
-        }
-
-        .timeline-content {
-            background: var(--off-white);
-            padding: 2rem;
-            border-radius: 16px;
-            max-width: 400px;
-            box-shadow: 0 10px 30px rgba(9, 132, 227, 0.15);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(9, 132, 227, 0.25);
-        }
-
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            right: -12px;
-            width: 0;
-            height: 0;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            border-left: 12px solid var(--off-white);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            right: auto;
-            left: -12px;
-            border-left: none;
-            border-right: 12px solid var(--off-white);
-        }
-
-        .timeline-year {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-text {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .timeline-icon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timeline-icon i {
-            color: var(--white);
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-container::before {
-                left: 20px;
-            }
-
-            .hero-buttons {
-                margin-bottom: 40px;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                padding-left: 60px;
-                padding-right: 0;
-                justify-content: flex-start;
-            }
-
-            .timeline-item::before {
-                left: 20px;
-            }
-
-            .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                display: none;
-            }
-
-            .timeline-content {
-                max-width: 100%;
-            }
-        }
-
-        /* Schedule Section */
-        .schedule {
-            padding: 8rem 5%;
-            background: var(--gradient-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .schedule::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(9, 132, 227, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
-        }
-
-        .schedule .section-header {
-            position: relative;
-            z-index: 10;
-        }
-
-        .schedule .section-badge {
-            background: rgba(9, 132, 227, 0.2);
-            border-color: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .schedule .section-title {
-            color: var(--white);
-        }
-
-        .schedule .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .schedule-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .match-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(9, 132, 227, 0.3);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .match-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
-        }
-
-        .match-card:hover {
-            transform: translateY(-10px);
-            background: rgba(9, 132, 227, 0.15);
-            border-color: var(--primary-blue);
-            box-shadow: var(--glow-blue);
-        }
-
-        .match-date {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        .match-date i {
-            font-size: 1rem;
-        }
-
-        .match-date span {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-        }
-
-        .match-competition {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: rgba(9, 132, 227, 0.2);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .match-teams {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            flex: 1;
-        }
-
-        .team-logo {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .team-name {
-            font-weight: 600;
-            color: var(--white);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .match-vs {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .match-location {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .match-location i {
-            color: var(--primary-blue);
-        }
-
-        .schedule-cta {
-            text-align: center;
-            margin-top: 3rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .schedule-cta p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 1024px) {
-            .schedule-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .schedule-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Social Section */
-        .social {
-            padding: 8rem 5%;
-            background: var(--gradient-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(9, 132, 227, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
-        }
-
-        .social-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .social-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .social-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(9, 132, 227, 0.2);
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--white);
-            transition: all 0.3s ease;
-            min-width: 200px;
-        }
-
-        .social-link:hover {
-            transform: translateY(-10px);
-            background: rgba(9, 132, 227, 0.2);
-            border-color: var(--primary-blue);
-            box-shadow: var(--glow-blue);
-        }
-
-        .social-link i {
-            font-size: 3rem;
-        }
-
-        .social-link span {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .social-link.instagram:hover {
-            border-color: #e1306c;
-            box-shadow: 0 0 30px rgba(225, 48, 108, 0.4);
-        }
-
-        .social-link.youtube:hover {
-            border-color: #ff0000;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .contact-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .contact-info h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-icon i {
-            color: var(--white);
-            font-size: 1.25rem;
-        }
-
-        .contact-text {
-            font-weight: 500;
-            color: var(--dark-gray);
-        }
-
-        .contact-form {
-            background: var(--off-white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(9, 132, 227, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--white);
-            border: 2px solid var(--light-gray);
-            border-radius: 8px;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1rem;
-            color: var(--dark-gray);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(9, 132, 227, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1.25rem;
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--glow-blue);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--glow-blue-strong);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 3rem 5%;
-            background: var(--darker-blue);
-            color: var(--white);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .footer-logo .logo-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .footer-logo .logo-text {
-            font-size: 1.25rem;
-        }
-
-        .footer-text {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .hero-card {
-                max-width: 400px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .founder-card {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery-item:nth-child(1) {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .gallery-item:nth-child(4) {
-                grid-column: span 1;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-            }
-
-            .logo-text {
-                font-size: 1.1rem;
-            }
-
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .logo-icon i {
-                font-size: 1.2rem;
-            }
-
-            /* Hide CTA button on mobile, will show in menu */
-            .nav-cta {
-                display: none;
-            }
-
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(3, 61, 115, 0.98);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                padding-top: 60px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            /* Add CTA to mobile menu */
-            .nav-links.active::before {
-                content: '';
-                position: absolute;
-                top: 80px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                max-width: 250px;
-            }
-
-            .nav-links a {
-                font-size: 1.5rem;
-            }
-
-            /* Add CTA link inside mobile menu */
-            .nav-links .mobile-cta {
-                display: inline-flex;
-                margin-top: 1rem;
-                padding: 1rem 2rem;
-                background: var(--gradient-primary);
-                color: var(--white);
-                text-decoration: none;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                border-radius: 8px;
-                box-shadow: var(--glow-blue);
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            /* Default: hide mobile CTA on desktop */
-            .mobile-cta {
-                display: none;
-            }
-
-            .mobile-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .mobile-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .about-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-item:nth-child(1),
-            .gallery-item:nth-child(4) {
-                grid-column: span 1;
-            }
-
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Parallax Effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 
 <body>
@@ -1756,20 +23,36 @@
     <nav class="navbar" id="navbar">
         <div class="logo">
             <div class="logo-icon">
-                <i class="fas fa-futbol"></i>
+                <a href="#inicio" class="logo-link">
+                    <img src="img/logo-grama-transparent.PNG" alt="Logo Gramacity Futsal" class="logo-img">
+                </a>
             </div>
-            <span class="logo-text">Grama<span>city</span></span>
         </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#time">Time</a></li>
             <li><a href="#timeline">Linha do Tempo</a></li>
-            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#calendario">Calendário</a></li>
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#contato">Contato</a></li>
-            <li><a href="#contato" class="mobile-cta">Fale Conosco</a></li>
         </ul>
-        <a href="#contato" class="nav-cta">Fale Conosco</a>
+        <div class="icons-top">
+            <ul>
+                <li>
+                    <i class="bi bi-instagram"></i>
+                </li>
+                <li>
+                    <i class="bi bi-facebook"></i>
+                </li>
+                <li>
+                    <i class="bi bi-tiktok"></i>
+                </li>
+                <li>
+                    <i class="bi bi-youtube"></i>
+                </li>
+            </ul>
+        </div>
         <div class="mobile-toggle" id="mobileToggle">
             <span></span>
             <span></span>
@@ -1788,18 +71,20 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <i class="fas fa-star"></i>
-                    <span>Primeiro Clube Federado de Futsal</span>
+                    <span>Primeiro Clube de Frontin Federado no Futsal</span>
                 </div>
                 <h1 class="hero-title">
                     Grama<span class="highlight">City</span> Futsal
                 </h1>
                 <p class="hero-subtitle">
-                    A excelência do futsal brasileiro representada com paixão, dedicação e inovação.
-                    Somos mais que um time, somos uma família que busca sempre a vitória dentro de campo.
+                    O Grama City nasce como símbolo de coragem e pioneirismo:<br>
+                    A primeira equipe de Paulo de Frontin
+                    filiada à FFSERJ. <br><br> <i>Nosso sonho é <strong>transformar
+                            talento local</strong> em oportunidade real no futsal estadual.</i>
                 </p>
                 <div class="hero-tagline">
                     <i class="fas fa-quote-left"></i>
-                    "1º Clube Federado de Futsal na história de Engº Paulo de Frontin, RJ"
+                    "2022: 1ª Participação na <br> Federação de Futsal do RJ."
                 </div>
                 <div class="hero-buttons">
                     <a href="#timeline" class="btn-primary">
@@ -1817,7 +102,7 @@
                 <div class="hero-card">
                     <div class="hero-card-content">
                         <div class="hero-card-logo">
-                            <i class="fas fa-futbol"></i>
+                            <img src="img/logo-grama.png" alt="Logo Gramacity Futsal" width="160" height="160">
                         </div>
                         <h3>Gramacity</h3>
                         <p>Grama City Futsal</p>
@@ -1959,6 +244,86 @@
         </div>
     </section>
 
+    <!-- Team Info Section -->
+    <section class="team-info" id="time">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Informações do Time</span>
+            </div>
+            <h2 class="section-title">Gramacity Futsal</h2>
+            <p class="section-subtitle">
+                Tudo que você precisa saber sobre nosso clube
+            </p>
+        </div>
+
+        <div class="team-info-grid">
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-person-vcard"></i>
+                </div>
+                <h3>Nome do Clube</h3>
+                <p>Grama City Futsal</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <h3>Localização</h3>
+                <p>Engº Paulo de Frontin, RJ</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-flag"></i>
+                </div>
+                <h3>Fundação</h3>
+                <p>2017</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-cast"></i>
+                </div>
+                <h3>GR TV</h3>
+                <p>Canal de Transmissão</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-trophy"></i>
+                </div>
+                <h3>Galeria de Troféus</h3>
+                <p>1X Copa Amigos do Árbitro Série B</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-heart"></i>
+                </div>
+                <h3>Slogan</h3>
+                <p>"Deus é nosso Senhor"</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-browser-firefox"></i>
+                </div>
+                <h3>Mascote</h3>
+                <p>Raposa Azul</p>
+            </div>
+
+            <div class="team-info-card fade-in">
+                <div class="team-info-icon">
+                    <i class="bi bi-paint-bucket"></i>
+                </div>
+                <h3>Paleta de Cores</h3>
+                <p>Azul e Branco</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Timeline Section -->
     <section class="timeline" id="timeline">
         <div class="section-header">
@@ -1978,12 +343,10 @@
                     <div class="timeline-icon">
                         <i class="fas fa-flag"></i>
                     </div>
-                    <div class="timeline-year">2019</div>
-                    <h3 class="timeline-title">Fundação do Clube</h3>
+                    <div class="timeline-year">2017</div>
+                    <h3 class="timeline-title">Primeira Competição Municipal</h3>
                     <p class="timeline-text">
-                        O Gramacity Futsal foi fundado, tornando-se o primeiro clube federado
-                        de futsal na história de Engº Paulo de Frontin, RJ. O sonho de
-                        Klemilson Martins Freitas começou a se tornar realidade.
+                        Após fundação a equipe disputou a sua primeira competição municipal ( COPA VERDE ).
                     </p>
                 </div>
             </div>
@@ -1993,12 +356,11 @@
                     <div class="timeline-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <div class="timeline-year">2020</div>
-                    <h3 class="timeline-title">Primeiros Títulos</h3>
+                    <div class="timeline-year">2018</div>
+                    <h3 class="timeline-title">1ª Fase Mata-Mata Competição Municipal</h3>
                     <p class="timeline-text">
-                        O clube conquista seus primeiros títulos regionais, estabelecendo
-                        a marca Gramacity no cenário do futsal fluminense. A equipe
-                        demonstra seu potencial desde o início.
+                        Primeira vez que a equipe se classificou para as fases eliminatórias de uma competição municipal
+                        ( COPA VERDE ).
                     </p>
                 </div>
             </div>
@@ -2009,16 +371,15 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="timeline-year">2021</div>
-                    <h3 class="timeline-title">Crescimento e Estrutura</h3>
+                    <h3 class="timeline-title">Nova Presidência</h3>
                     <p class="timeline-text">
-                        Expansão das categorias de base e estruturação do departamento
-                        amateur. O Gramacity se consolida como referência na formação
-                        de atletas na região.
+                        Klemilson Martins Freitas ao lado de Jessé Amihere assume a presidência do clube, trazendo uma
+                        nova visão e estratégias para o crescimento do Grama City Futsal.
                     </p>
                 </div>
             </div>
 
-            <div class="timeline-item fade-in">
+            <!-- <div class="timeline-item fade-in">
                 <div class="timeline-content">
                     <div class="timeline-icon">
                         <i class="fas fa-video"></i>
@@ -2031,6 +392,131 @@
                         com os fãs fica ainda mais forte.
                     </p>
                 </div>
+            </div> -->
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">1º Clube de Frontin <br> Federado na FFSERJ</h3>
+                    <p class="timeline-text">
+                        Após assumir a presidência, a primeira estratégia de Klemilson foi filiar o clube à Federação de
+                        Futsal do Rio de Janeiro (FFSERJ). O Grama City se torna o primeiro clube de Engº Paulo de
+                        Frontin a alcançar esse marco, abrindo portas para competições estaduais e reconhecimento
+                        oficial no cenário do futsal carioca.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">Chegada do Diretor Geral Esportivo
+                        <p class="timeline-text">
+                            Chegada do Vitor Cardoso como Diretor Geral Esportivo, trazendo uma nova visão e estratégias
+                            para o desenvolvimento do clube. Sob sua liderança, o Grama City Futsal inicia um processo
+                            de profissionalização e expansão, focando no desenvolvimento dos atletas e na extruturação
+                            do cluble.
+                        </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">Estreia no Campeonato Carioca</h3>
+                    <p class="timeline-text">
+                        No dia 3 de Abril de 2022 no ginásio Nelson Ferreira em Magé - RJ, o Grama City Futsal fez sua
+                        estreia oficial no Campeonato Carioca.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">1ª Vitória no Campeonato Carioca</h3>
+                    <p class="timeline-text">
+                        No dia 4 de junho de 2022, no ginásio de Morro Azul, em Engenheiro Paulo de Frontin - RJ, o
+                        Grama City Futsal conquistou sua primeira vitória no Campeonato Carioca, vencendo a equipe do 7º
+                        BPM Futsal por 12 a 1. A partida foi marcada por muita emoção e superação, com o Grama City
+                        mostrando sua garra e determinação para alcançar esse importante marco em sua história.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">Vitória Conta o Vasco da Gama</h3>
+                    <p class="timeline-text">
+                        No dia 18 de julho de 2022, no Ginásio de Morro Azul, em Engenheiro Paulo de Frontin - RJ, o
+                        Grama City conquistou a sua primeira vitória de expressão, vencendo o tradicional clube do Vasco
+                        da Gama por 2 a 1, se tornando notícia nos principais veiculos de comunicação, como o Globo
+                        Esporte, e ganhando destaque no cenário do futsal carioca. A partida foi marcada por muita
+                        emoção, com o Grama City mostrando sua garra e determinação para alcançar esse importante marco
+                        em sua história.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">1ª Participação no Campeonato Estadual da FFSERJ</h3>
+                    <p class="timeline-text">
+                        No dia 14 de setembro de 2022, a equipe do Grama City é confirmada para o campeonato estadual da
+                        FFSERJ.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">1ª Fase Mata-Mata na Federação FFSERJ</h3>
+                    <p class="timeline-text">
+                        No dia 12 de novembro de 2022, a equipe do Grama City elimina a tradicional Portuguesa e se
+                        classifica para as fases eliminatórias, sendo confirmado para enfrentar o Vasco da Gama nas
+                        quartas de finais.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2023</div>
+                    <h3 class="timeline-title">Primeira Participação na Copa Sul-Fluminense</h3>
+                    <p class="timeline-text">
+                        No dia 29 de julho de 2023, o Grama City Confirma participação na Copa Sul-Fluminense,
+                        competição que reúne os principais clubes da região, marcando mais um passo importante na
+                        trajetória de crescimento do clube.
+                    </p>
+                </div>
             </div>
 
             <div class="timeline-item fade-in">
@@ -2038,111 +524,293 @@
                     <div class="timeline-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <div class="timeline-year">2024</div>
-                    <h3 class="timeline-title">Consolidação</h3>
+                    <div class="timeline-year">2023</div>
+                    <h3 class="timeline-title">Estréia com o pé direito</h3>
                     <p class="timeline-text">
-                        O Gramacity Futsal se consolida como um dos principais
-                        clubes de futsal do interior do RJ, com mais de 1.3K
-                        seguidores nas redes sociais e presença nacional.
+                        No dia 26 de agosto de 2023, o Grama City fez sua estréia na Copa Sul-Fluminense vencendo em
+                        casa a equipe do Volta Redonda Futsal pelo placar de 7 a 3, com destaque para o jogador Yago que
+                        marcou 4 gols na partida.
                     </p>
                 </div>
             </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2023</div>
+                    <h3 class="timeline-title">Semi-finais</h3>
+                    <p class="timeline-text">
+                        O clube encerrou o ano tendo alcançado as semi-finais da Copa Sul-Fluminense, consolidando-se
+                        como um dos principais clubes de futsal do interior do RJ.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">The Fox is Comming Back</h3>
+                    <p class="timeline-text">
+                        O tradicional clube de Engenheiro Paulo de Frontin Grama City Futsal anuncia o retorno das
+                        atividades em 2026, após um período de hiato. O anuncio veio através da notícia de que a equipe
+                        estava confirmada para disputar a 1ªCopa Amigos do Árbitro Série B, competição que reúne equipes
+                        do município de Engenheiro Paulo de Frontin.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Inicio da GR TV</h3>
+                    <p class="timeline-text">
+                        Com o objetivo de ampliar o alcance e a visibilidade do clube, o Grama City Futsal lança a GR
+                        TV,
+                        um canal de transmissão de jogos e conteúdos exclusivos do clube no YouTube, tendo como linha de
+                        frente o Marco Giovani, um dos principais profissionais de audiovisual da região Sul-Fluminense.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Estreia com pé direito</h3>
+                    <p class="timeline-text">
+                        Sob o comando do novo técnico Ruan Sereno, que foi direcionado para a 1ª Copa Amigos do Arbitro
+                        Série B, a equipe venceu logo na estréia pelo placar de 3 a 1 o clube Parque Santa Clara.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Primeiro Título da História</h3>
+                    <p class="timeline-text">
+                        No dia 12 de fevereiro de 2026, o Grama City Futsal conquistou o seu primeiro título da
+                        história, vencendo a equipe do Passa o Rodo F.C. pelo placar de 2 a 1, na final da 1ª Copa
+                        Amigos do Árbitro Série B. A partida foi marcada por muita emoção, com o Grama City mostrando
+                        sua garra e determinação para alcançar esse importante marco em sua história.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Continuidade do legado na FFSERJ</h3>
+                    <p class="timeline-text">
+                        No dia 24 de fevereiro de 2026, o Grama City Futsal anuncia a continuidade do legado de
+                        pioneirismo e competitividade, confirmando sua participação na próxima edição do campeonato
+                        carioca da FFSERJ, reafirmando seu compromisso com o desenvolvimento do futsal no interior do
+                        Rio de Janeiro e a busca por novos desafios e conquistas.
+                    </p>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Schedule Section -->
-    <section class="schedule" id="agenda">
+    <section class="schedule" id="calendario">
         <div class="section-header">
             <div class="section-badge">
                 <i class="fas fa-calendar-alt"></i>
-                <span>Próximos Jogos</span>
+                <span>Calendário de Jogos</span>
             </div>
-            <h2 class="section-title">Agenda de Jogos</h2>
+            <h2 class="section-title">Campeonato Fluminense 2025</h2>
             <p class="section-subtitle">
-                Não perca nenhum jogo do Gramacity Futsal
+                Tabela completa da temporada
             </p>
         </div>
 
-        <div class="schedule-grid">
-            <div class="match-card fade-in">
-                <div class="match-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>15/03/2024 - 19:00</span>
-                </div>
-                <div class="match-competition">Copa Regional</div>
-                <div class="match-teams">
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">Gramacity</span>
-                    </div>
-                    <span class="match-vs">VS</span>
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">São Paulo FC</span>
-                    </div>
-                </div>
-                <div class="match-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Ginásio Poliesportivo - Engº Paulo de Frontin</span>
-                </div>
-            </div>
-
-            <div class="match-card fade-in">
-                <div class="match-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>22/03/2024 - 20:00</span>
-                </div>
-                <div class="match-competition">Campeonato Fluminense</div>
-                <div class="match-teams">
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">Gramacity</span>
-                    </div>
-                    <span class="match-vs">VS</span>
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">Botafogo</span>
-                    </div>
-                </div>
-                <div class="match-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Ginásio da Lagoa - Rio de Janeiro</span>
-                </div>
-            </div>
-
-            <div class="match-card fade-in">
-                <div class="match-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>05/04/2024 - 18:30</span>
-                </div>
-                <div class="match-competition">Copa Interior</div>
-                <div class="match-teams">
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">Gramacity</span>
-                    </div>
-                    <span class="match-vs">VS</span>
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-futbol"></i>
-                        </div>
-                        <span class="team-name">Flamengo</span>
-                    </div>
-                </div>
-                <div class="match-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Ginásio Poliesportivo - Nova Friburgo</span>
-                </div>
+        <div class="container">
+            <div class="table-responsive championship-table">
+                <table class="table table-bordered table-striped table-hover bg-white rounded-4 overflow-hidden">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="text-center" style="width: 60px;">#</th>
+                            <th scope="col">-data</th>
+                            <th scope="col">Confronto</th>
+                            <th scope="col">Rodada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center fw-bold">1</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>21 ou 22/03</td>
+                            <td>
+                                <img src="img/logos/portuguesa.png" alt="A.A. Portuguesa" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">A.A. Portuguesa</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">1ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">2</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>28 ou 29/03</td>
+                            <td>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/magefutsal.png" alt="Magé Futsal" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Magé Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">2ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">3</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>04 ou 05/04</td>
+                            <td>
+                                <img src="img/logos/vasconovo.png" alt="Vasco da Gama" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Vasco da Gama</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">3ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">4</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>11 ou 12/04</td>
+                            <td>
+                                <i class="bi bi-shield-fill team-icon"></i>
+                                <span class="team-away">Barra Mansa</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">4ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">5</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>18 ou 19/04</td>
+                            <td>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <i class="bi bi-shield-fill team-icon"></i>
+                                <span class="team-away">Macaé Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">5ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">6</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>02 ou 03/05</td>
+                            <td>
+                                <img src="img/logos/cantodorio.png" alt="Canto do Rio" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Canto do Rio</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">6ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">7</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>09 ou 10/05</td>
+                            <td>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/correa.png" alt="Correas Futsal" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Correas Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">7ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">8</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>16 ou 17/05</td>
+                            <td>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/aesg.png" alt="AESG" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">AESG</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">8ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">9</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>23 ou 24/05</td>
+                            <td>
+                                <img src="img/logos/botafogo.png" alt="Botafogo" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Botafogo F.R.</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">9ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">10</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>30 ou 31/05</td>
+                            <td>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/olaria.png" alt="Olaria" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Olaria</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">10ª Rodada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">11</td>
+                            <td><i class="bi bi-calendar3 me-2"></i>06 ou 07/06</td>
+                            <td>
+                                <img src="img/logos/comary.png" alt="Comary Futsal" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-away">Comary Futsal</span>
+                                <span class="vs-badge">X</span>
+                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
+                                    onerror="this.style.display='none'">
+                                <span class="team-home">Grama City Futsal</span>
+                            </td>
+                            <td><span class="badge bg-primary rounded-pill">11ª Rodada</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
