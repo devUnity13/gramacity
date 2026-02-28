@@ -243,6 +243,10 @@
             pointer-events: none;
         }
 
+        .hero {
+            padding-top: 60px;
+        }
+
         /* Animated Grid Background */
         .hero-grid {
             position: absolute;
