@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -645,169 +646,282 @@
             </p>
         </div>
 
-        <div class="container">
-            <div class="table-responsive championship-table">
-                <table class="table table-bordered table-striped table-hover bg-white rounded-4 overflow-hidden">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col" class="text-center" style="width: 60px;">#</th>
-                            <th scope="col">-data</th>
-                            <th scope="col">Confronto</th>
-                            <th scope="col">Rodada</th>
+                            <th scope="col" class="text-center" style="width: 50px;">#</th>
+                            <th scope="col" style="width: 150px;">Data do Jogo</th>
+                            <th scope="col" class="text-end">Time Casa</th>
+                            <th scope="col" class="text-center" style="width: 50px;"></th>
+                            <th scope="col">Time Visitante</th>
+                            <th scope="col" class="text-center" style="width: 120px;">Rodada</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Jogo 1 -->
                         <tr>
                             <td class="text-center fw-bold">1</td>
                             <td><i class="bi bi-calendar3 me-2"></i>21 ou 22/03</td>
                             <td>
-                                <img src="img/logos/portuguesa.png" alt="A.A. Portuguesa" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">A.A. Portuguesa</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">A.A. Portuguesa</span>
+                                    <img src="img/logos/portuguesa.png" alt="A.A. Portuguesa" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">1ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">1ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 2 -->
                         <tr>
                             <td class="text-center fw-bold">2</td>
                             <td><i class="bi bi-calendar3 me-2"></i>28 ou 29/03</td>
                             <td>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/magefutsal.png" alt="Magé Futsal" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Magé Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Grama City Futsal</span>
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">2ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/magefutsal.png" alt="Magé Futsal"
+                                        class="team-logo-schedule me-2" onerror="this.style.display='none'">
+                                    <span class="team-name">Magé Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">2ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 3 -->
                         <tr>
                             <td class="text-center fw-bold">3</td>
                             <td><i class="bi bi-calendar3 me-2"></i>04 ou 05/04</td>
                             <td>
-                                <img src="img/logos/vasconovo.png" alt="Vasco da Gama" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Vasco da Gama</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Vasco da Gama</span>
+                                    <img src="img/logos/vasconovo.png" alt="Vasco da Gama" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">3ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">3ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 4 -->
                         <tr>
                             <td class="text-center fw-bold">4</td>
                             <td><i class="bi bi-calendar3 me-2"></i>11 ou 12/04</td>
                             <td>
-                                <i class="bi bi-shield-fill team-icon"></i>
-                                <span class="team-away">Barra Mansa</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Barra Mansa</span>
+                                    <img src="img/logos/barra_mansa.png" alt="Barra Mansa" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">4ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">4ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 5 -->
                         <tr>
                             <td class="text-center fw-bold">5</td>
                             <td><i class="bi bi-calendar3 me-2"></i>18 ou 19/04</td>
                             <td>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <i class="bi bi-shield-fill team-icon"></i>
-                                <span class="team-away">Macaé Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Grama City Futsal</span>
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">5ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/macae.png" alt="Macaé Futsal" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Macaé Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">5ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 6 -->
                         <tr>
                             <td class="text-center fw-bold">6</td>
                             <td><i class="bi bi-calendar3 me-2"></i>02 ou 03/05</td>
                             <td>
-                                <img src="img/logos/cantodorio.png" alt="Canto do Rio" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Canto do Rio</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Canto do Rio</span>
+                                    <img src="img/logos/cantodorio.png" alt="Canto do Rio" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">6ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">6ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 7 -->
                         <tr>
                             <td class="text-center fw-bold">7</td>
                             <td><i class="bi bi-calendar3 me-2"></i>09 ou 10/05</td>
                             <td>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/correa.png" alt="Correas Futsal" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Correas Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Grama City Futsal</span>
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">7ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/correa.png" alt="Correas Futsal" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Correas Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">7ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 8 -->
                         <tr>
                             <td class="text-center fw-bold">8</td>
                             <td><i class="bi bi-calendar3 me-2"></i>16 ou 17/05</td>
                             <td>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/aesg.png" alt="AESG" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">AESG</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Grama City Futsal</span>
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">8ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/aesg.png" alt="AESG" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">AESG</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">8ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 9 -->
                         <tr>
                             <td class="text-center fw-bold">9</td>
                             <td><i class="bi bi-calendar3 me-2"></i>23 ou 24/05</td>
                             <td>
-                                <img src="img/logos/botafogo.png" alt="Botafogo" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Botafogo F.R.</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Botafogo F.R.</span>
+                                    <img src="img/logos/botafogo.png" alt="Botafogo" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">9ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">9ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 10 -->
                         <tr>
                             <td class="text-center fw-bold">10</td>
                             <td><i class="bi bi-calendar3 me-2"></i>30 ou 31/05</td>
                             <td>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/olaria.png" alt="Olaria" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Olaria</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Grama City Futsal</span>
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">10ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/olaria.png" alt="Olaria" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Olaria</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">10ª Rodada</span></td>
                         </tr>
+
+                        <!-- Jogo 11 -->
                         <tr>
                             <td class="text-center fw-bold">11</td>
                             <td><i class="bi bi-calendar3 me-2"></i>06 ou 07/06</td>
                             <td>
-                                <img src="img/logos/comary.png" alt="Comary Futsal" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-away">Comary Futsal</span>
-                                <span class="vs-badge">X</span>
-                                <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo"
-                                    onerror="this.style.display='none'">
-                                <span class="team-home">Grama City Futsal</span>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="team-name me-2">Comary Futsal</span>
+                                    <img src="img/logos/comary.png" alt="Comary Futsal" class="team-logo-schedule"
+                                        onerror="this.style.display='none'">
+                                </div>
                             </td>
-                            <td><span class="badge bg-primary rounded-pill">11ª Rodada</span></td>
+                            <td class="text-center">
+                                <span class="vs-badge-new">X</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img src="img/logos/gramacity.png" alt="Grama City" class="team-logo-schedule me-2"
+                                        onerror="this.style.display='none'">
+                                    <span class="team-name">Grama City Futsal</span>
+                                </div>
+                            </td>
+                            <td class="text-center"><span class="badge bg-primary rounded-pill">11ª Rodada</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -934,6 +1048,12 @@
                         </div>
                         <span class="contact-text">Gr City TV</span>
                     </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </div>
+                        <span class="contact-text">grcity2017@gmail.com</span>
+                    </div>
                 </div>
             </div>
 
@@ -962,10 +1082,68 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <!-- Patrocinadores -->
+        <div class="sponsors-section">
+            <div class="sponsors-header">
+                <h3>Patrocinadores</h3>
+                <p>Apoiadores que fazem o Grama City acontecer</p>
+            </div>
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8468.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8469.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8377.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_9230.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8458.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8446.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8474.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8472.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_3955.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_3956.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8375.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8376.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_3936.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_8471.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_3954.PNG" alt="Patrocinador">
+                </div>
+                <div class="sponsor-item">
+                    <img src="img/patrocinadores/IMG_3957.PNG" alt="Patrocinador">
+                </div>
+            </div>
+        </div>
+
         <div class="footer-content">
             <div class="footer-logo">
                 <div class="logo-icon">
-                    <i class="fas fa-futbol"></i>
+                    <img src="./img/logo-grama.png" alt="Logo do Grama" height="65px" width="65px" class="logo-rodape">
                 </div>
                 <span class="logo-text">Grama<span>city</span></span>
             </div>
