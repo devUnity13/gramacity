@@ -2308,6 +2308,6 @@ body {
     background-size: cover;
 }
 
-.bi::before {
+.contact-item .bi::before {
     color: var(--white) !important;
 }
