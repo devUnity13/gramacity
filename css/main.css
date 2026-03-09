@@ -1375,9 +1375,17 @@ body {
 .contact-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
     gap: 4rem;
+    align-items: center;
+}
+
+.contact-content .talk{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -1396,9 +1404,9 @@ body {
 }
 
 .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .contact-item {
