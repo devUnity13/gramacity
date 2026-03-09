@@ -1372,21 +1372,16 @@ body {
     background: var(--white);
 }
 
-.contact-content {
+.contact-content .contact-details {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
     align-items: center;
-}
-
-.contact-content .talk{
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #e9ecef;
+    padding: 40px;
+    border-radius: 16px;
 }
 
 .contact-info h3 {
@@ -1404,9 +1399,9 @@ body {
 }
 
 .contact-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .contact-item {
@@ -1771,7 +1766,7 @@ body {
     pointer-events: none;
 }
 
-.bi-newspaper::before {
+.bi::before .journal{
     color: var(--white) !important;
 }
 
@@ -1990,7 +1985,7 @@ body {
         grid-column: span 1;
     }
 
-    .contact-content {
+    .contact-content .contact-details{
         grid-template-columns: 1fr;
     }
 
