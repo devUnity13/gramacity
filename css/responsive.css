@@ -1,0 +1,697 @@
+/* =============================================================
+   GRAMACITY FUTSAL — RESPONSIVE (Mobile & Tablet)
+   Adicione APÓS o main.css:
+   <link rel="stylesheet" href="css/responsive.css">
+   ============================================================= */
+
+
+/* =============================================================
+   TABLET  (641px – 1024px)
+   ============================================================= */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .navbar {
+    padding: 0.75rem 4%;
+    min-height: 80px;
+  }
+
+  .logo-img {
+    width: 95px;
+    height: 95px;
+  }
+
+  .nav-links { gap: 1.1rem; }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .icons-top ul { gap: 14px; }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 0 4%;
+  }
+
+  .hero-buttons { justify-content: center; }
+  .hero-visual  { order: -1; }
+
+  .hero-tagline {
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .hero-card {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .about { padding: 6rem 4%; }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .founder-carousel {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .founder-arrow-left  { left: -18px; }
+  .founder-arrow-right { right: -18px; }
+
+  .stats { padding: 5rem 4%; }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .team-info { padding: 6rem 4%; }
+
+  .team-info-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .timeline  { padding: 6rem 4%; }
+  .schedule  { padding: 6rem 4%; }
+
+  .elenco { padding: 5rem 0 4rem; }
+
+  .elenco-wrapper { padding: 0 60px; }
+
+  .player-slide { flex: 0 0 50%; }
+
+  .social { padding: 5rem 4%; }
+
+  .social-link {
+    min-width: 160px;
+    padding: 1.5rem;
+  }
+
+  .contact { padding: 6rem 4%; }
+
+  .contact-content { grid-template-columns: 1fr; }
+
+  .contact-form { padding: 2rem; }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .footer-content {
+    padding: 1.5rem 4%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* =============================================================
+   MOBILE  (≤ 640px)
+   ============================================================= */
+@media (max-width: 640px) {
+
+  /* ── Global ── */
+  .section-header {
+    margin-bottom: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .section-title    { font-size: clamp(1.7rem, 6.5vw, 2.2rem); }
+  .section-subtitle { font-size: 0.95rem; }
+
+  /* ─────────────────────────────────────────
+     NAVBAR
+  ───────────────────────────────────────── */
+  .navbar {
+    padding: 0 1.5rem;
+    min-height: 76px;
+  }
+
+  .navbar.scrolled {
+    min-height: 64px;
+    padding: 0 1.5rem;
+  }
+
+  /* Logo com tamanho respeitável */
+  .logo-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo-img {
+    width: 68px;
+    height: 68px;
+    margin-right: 0;
+  }
+
+  .navbar.scrolled .logo-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Hamburguer maior e mais visível */
+  .mobile-toggle {
+    padding: 8px 4px;
+    gap: 6px;
+  }
+
+  .mobile-toggle span {
+    width: 30px;
+    height: 3px;
+  }
+
+  /* Ícones redes sociais no topo — ocultar (aparecem na seção social) */
+  .icons-top { display: none; }
+
+  /* ─────────────────────────────────────────
+     HERO
+  ───────────────────────────────────────── */
+  .hero { padding-top: 76px; }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem 1.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  /* Card em cima, texto embaixo */
+  .hero-text   { order: 2; }
+  .hero-visual { order: 1; display: flex; justify-content: center; }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9.5vw, 2.8rem);
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Tagline centralizada */
+  .hero-tagline {
+    font-size: 1rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1.75rem;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero card */
+  .hero-card {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    margin-top: 0;
+  }
+
+  .hero-card-logo {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-card-logo img {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  .hero-card h3 { font-size: 1.3rem; }
+  .hero-card p  { font-size: 0.82rem; }
+
+  .hero-stats {
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .hero-stats .stat { flex: 1; }
+
+  .hero-stats .stat-number { font-size: 1.15rem; }
+  .hero-stats .stat-label  { font-size: 0.6rem; }
+
+  /* ─────────────────────────────────────────
+     ABOUT
+  ───────────────────────────────────────── */
+  .about { padding: 5rem 1.5rem 4rem; }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .founder-carousel {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .founder-track-outer { border-radius: 16px; }
+
+  .founder-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
+  }
+
+  .founder-arrow-left  { left: 10px; }
+  .founder-arrow-right { right: 10px; }
+
+  .founder-name { font-size: 1.15rem; }
+  .founder-role { font-size: 0.8rem; }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 1.5rem;
+  }
+
+  .highlight-item {
+    padding: 1.1rem;
+    gap: 0.875rem;
+  }
+
+  .highlight-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .highlight-text h4 { font-size: 0.9rem; }
+  .highlight-text p  { font-size: 0.82rem; }
+
+  /* ─────────────────────────────────────────
+     STATS
+  ───────────────────────────────────────── */
+  .stats { padding: 4rem 1.5rem; }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card { padding: 1.5rem 1rem; }
+
+  .stat-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .stat-icon i { font-size: 1.4rem; }
+
+  /* Scoped para não conflitar com .hero-stats */
+  .stat-card .stat-number { font-size: 2rem; }
+  .stat-card .stat-label  { font-size: 0.8rem; }
+
+  /* ─────────────────────────────────────────
+     TEAM INFO
+  ───────────────────────────────────────── */
+  .team-info { padding: 4.5rem 1.5rem; }
+
+  .team-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 2rem;
+  }
+
+  .team-info-card { padding: 1.2rem 0.875rem; }
+
+  .team-info-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .team-info-card h3 {
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .team-info-card p { font-size: 13px; }
+
+  /* ─────────────────────────────────────────
+     TIMELINE
+  ───────────────────────────────────────── */
+  .timeline { padding: 5rem 1.5rem 4rem; }
+
+  .timeline-container::before {
+    left: 16px;
+    width: 3px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding-left: 50px;
+    padding-right: 0;
+    justify-content: flex-start;
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-item::before {
+    left: 16px;
+    width: 15px;
+    height: 15px;
+    top: 18px;
+  }
+
+  .timeline-content {
+    padding: 1.25rem;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .timeline-content::after,
+  .timeline-item:nth-child(even) .timeline-content::after {
+    display: none;
+  }
+
+  .timeline-year  { font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .timeline-title { font-size: 1rem;   margin-bottom: 0.5rem; }
+  .timeline-text  { font-size: 0.87rem; }
+
+  .timeline-icon {
+    width: 32px;
+    height: 32px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .timeline-icon i { font-size: 0.78rem; }
+
+  /* ─────────────────────────────────────────
+     SCHEDULE — scroll horizontal profissional
+  ───────────────────────────────────────── */
+  .schedule {
+    padding: 5rem 0 4rem;
+  }
+
+  .schedule .section-header,
+  .schedule .schedule-cta {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Container ocupa largura total */
+  .schedule > .container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Scroll com indicador de sombra lateral */
+  .schedule .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-blue) rgba(255,255,255,0.1);
+    /* Sombra que indica que tem mais conteúdo para o lado */
+    background:
+      linear-gradient(to right,  #fff 16px, transparent 16px),
+      linear-gradient(to left,   #fff 16px, transparent 16px) right,
+      radial-gradient(farthest-side at 0    50%, rgba(9,132,227,0.3), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgba(9,132,227,0.3), transparent) right;
+    background-repeat: no-repeat;
+    background-size: 40px 100%, 40px 100%, 12px 100%, 12px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .schedule .table-responsive::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .schedule .table-responsive::-webkit-scrollbar-track {
+    background: rgba(9,132,227,0.08);
+    border-radius: 2px;
+  }
+
+  .schedule .table-responsive::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 2px;
+  }
+
+  /* Tabela com largura mínima — NUNCA vai espremer o conteúdo */
+  .schedule .table {
+    min-width: 580px;
+    font-size: 0.85rem;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .schedule .table-dark th {
+    padding: 14px 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .schedule tbody td {
+    padding: 13px 14px;
+    white-space: nowrap;
+  }
+
+  .team-logo-schedule {
+    width: 28px;
+    height: 28px;
+  }
+
+  .team-name      { font-size: 0.85rem; }
+  .vs-badge-new   { padding: 5px 12px; font-size: 0.78rem; }
+
+  /* ─────────────────────────────────────────
+     ELENCO
+  ───────────────────────────────────────── */
+  .elenco { padding: 4.5rem 0 3.5rem; }
+
+  .elenco .section-header {
+    padding: 0 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .elenco .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    letter-spacing: 3px;
+  }
+
+  .elenco-wrapper { padding: 0 46px; }
+
+  .elenco-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .elenco-arrow-left  { left: 4px; }
+  .elenco-arrow-right { right: 4px; }
+
+  .player-slide {
+    flex: 0 0 78%;
+    padding: 8px;
+  }
+
+  .player-barca-number {
+    font-size: 2.2rem;
+    top: 12px;
+    left: 14px;
+  }
+
+  .player-barca-firstname { font-size: 0.68rem; letter-spacing: 1.5px; }
+  .player-barca-lastname  { font-size: clamp(0.9rem, 4vw, 1.2rem); }
+  .player-barca-position  { font-size: 0.62rem; letter-spacing: 2px; }
+  .player-barca-info      { padding: 0.875rem 1rem 1rem; }
+
+  .elenco-dots {
+    margin-top: 2rem;
+    gap: 8px;
+    padding: 0 1.5rem;
+  }
+
+  .elenco-dot        { width: 22px; height: 3px; }
+  .elenco-dot.active { width: 36px; }
+
+  /* ─────────────────────────────────────────
+     SOCIAL
+  ───────────────────────────────────────── */
+  .social { padding: 4.5rem 1.5rem; }
+
+  .social-title    { font-size: 1.75rem; }
+  .social-subtitle { font-size: 0.95rem; margin-bottom: 2rem; }
+
+  .social-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .social-link {
+    min-width: unset;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.25rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .social-link i    { font-size: 1.75rem; }
+  .social-link span { font-size: 0.9rem; }
+
+  /* ─────────────────────────────────────────
+     CONTACT
+  ───────────────────────────────────────── */
+  .contact { padding: 5rem 1.5rem 4rem; }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-info h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .contact-info p  { font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+  .contact-details { gap: 1rem; }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-text { font-size: 0.9rem; }
+
+  .contact-form {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .form-group          { margin-bottom: 1.1rem; }
+  .form-group label    { font-size: 0.78rem; }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea { min-height: 120px; }
+
+  .submit-btn { padding: 1rem; font-size: 0.9rem; }
+
+  /* ─────────────────────────────────────────
+     SPONSORS
+  ───────────────────────────────────────── */
+  .sponsors-section { padding: 2.5rem 1.5rem; }
+
+  .sponsors-header   { margin-bottom: 1.75rem; }
+
+  .sponsors-header h3 {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .sponsors-header p { font-size: 0.85rem; }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.875rem;
+  }
+
+  .sponsor-item {
+    height: 72px;
+    padding: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .sponsor-item img { max-height: 54px; }
+
+  /* ─────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────── */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-logo { margin-left: 0; }
+
+  .logo-rodape img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .footer-text    { font-size: 0.82rem; }
+  .footer-social  { gap: 0.875rem; }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* =============================================================
+   EXTRA SMALL  (≤ 380px)
+   ============================================================= */
+@media (max-width: 380px) {
+
+  .hero-title { font-size: 1.85rem; }
+  .hero-card  { max-width: 230px; }
+
+  .stats-grid { gap: 0.75rem; }
+  .stat-card  { padding: 1.1rem 0.75rem; }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-slide      { flex: 0 0 90%; }
+  .elenco-wrapper    { padding: 0 38px; }
+}
